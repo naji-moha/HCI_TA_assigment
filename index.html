@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Horse Hotel</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #fce4ec;
+            color: #5d4037;
+            margin: 40ppx;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d81b60;
+            font-size: 3rem;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        h2, h3, h4, h5 {
+            color: #8e24aa;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        /* Menu styling */
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #e91e63;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #f06292;
+        }
+
+        form input[type="radio"], form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        form label {
+            font-size: 1rem;
+            color: #5d4037;
+        }
+
+        img {
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ol {
+            margin-left: 40px;
+            color: #d81b60;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        ol li a {
+            color: #8e24aa;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        ol li a:hover {
+            color: #ab47bc;
+        }
+
+        footer {
+            background-color: #d81b60;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        footer b {
+            font-size: 1.2rem;
+        }
+
+        h1, h2, h3, h4, p, ol li {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        img {
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .button {
+            background-color: #ab47bc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ce93d8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hotel Heading -->
+    <h1>White Horse Hotel</h1>
+
+    <!-- About Section -->
+    <h2>About Our Hotel</h2>
+    <p><i>Begin your journey with us here at our main lounge. The main lounge with its elegance and décor has a warm welcoming style, providing a perfect backdrop for relaxation with family and friends.</i></p>
+    <p><i>Fusing contemporary luxury with inimitable elegance, White Horse Hotel & Apartments is a stunning hotel located on a hilltop in one of the city’s most vibrant neighborhoods. Combining upscale style with elegant city living, our stylish décor, excellent facilities, and fantastic service create a first-class experience and the perfect home away from home.</i></p>
+
+    <!-- Cuisine Section -->
+    <h5>Select Your Favorite Cuisine</h5>
+    <form>
+        <input type="radio" id="Italian" name="cuisine" value="italian">
+        <label for="Italian">Italian</label><br>
+
+        <input type="radio" id="Chinese" name="cuisine" value="chinese">
+        <label for="Chinese">Chinese</label><br>
+
+        <input type="radio" id="American" name="cuisine" value="american">
+        <label for="American">American</label><br><br>
+
+        <input type="submit" value="Submit" class="button">
+    </form>
+
+    <!-- Image Gallery -->
+    <h2>Gallery</h2>
+    <img src="horse.jpeg" alt="Hotel Logo" width="300">
+    <img src="bed.jpeg" alt="Hotel Bed" width="300">
+    <img src="gym.jpg" alt="Hotel Gym" width="300">
+
+    <!-- Links to other pages -->
+    <h3>More About Us</h3>
+    <a href="https://hotelwhitehorse.com" class="button">Visit our website to learn more</a><br><br>
+    <a href="https://www.instagram.com/whitehorsehotelhargeisa/" class="button">Follow us on Instagram</a>
+
+    <!-- Menu Categories -->
+    <h4>Menu Categories</h4>
+    <ol>
+        <li><a href="https://www.google.com/search?q=appetizers">Appetizers</a></li>
+        <li><a href="https://www.google.com/search?q=main+courses">Main Courses</a></li>
+        <li><a href="https://www.google.com/search?q=desserts">Desserts</a></li>
+        <li><a href="https://www.google.com/search?q=beverages">Beverages</a></li>
+        <li><a href="https://www.google.com/search?q=specials">Specials</a></li>
+    </ol>
+
+    <!-- Special Features using checkboxes -->
+    <h2>Special Features</h2>
+    <form>
+        <input type="checkbox" id="outdoor-seating" name="feature" value="Outdoor Seating">
+        <label for="outdoor-seating">Outdoor Seating</label><br>
+
+        <input type="checkbox" id="vegan-options" name="feature" value="Vegan Options">
+        <label for="vegan-options">Vegan Options</label><br>
+
+        <input type="checkbox" id="delivery" name="feature" value="Delivery">
+        <label for="delivery">Delivery</label><br>
+
+        <input type="checkbox" id="free-wifi" name="feature" value="Free Wifi">
+        <label for="free-wifi">Free Wi-Fi</label><br>
+    </form>
+
+    <!-- Popular Dishes -->
+    <h2>Popular Dishes</h2>
+    <dl>
+        <dt><strong>Grilled Lamb Chops</strong></dt>
+        <dd>Succulent lamb chops marinated in a special herb mix and grilled to perfection.</dd>
+
+        <dt><strong>Spaghetti Carbonara</strong></dt>
+        <dd>Classic Italian pasta dish made with a creamy egg sauce, crispy pancetta, and Parmesan cheese.</dd>
+
+        <dt><strong>Vegetarian Stir-fry</strong></dt>
+        <dd>A healthy mix of seasonal vegetables stir-fried in a flavorful soy-garlic sauce.</dd>
+
+        <dt><strong>Chocolate Lava Cake</strong></dt>
+        <dd>Decadent chocolate cake with a molten center, served with vanilla ice cream.</dd>
+    </dl>
+
+    <!-- Footer -->
+    <footer>
+        <b>Contact info: <br>Name: Eboney Celin<br>Phone: 252456829034<br>Email: najma44cl@gmail.com<br>Location: Hargeisa, Somaliland.</b>
+        <br>
+        <br><b>Hope you come back soon! 😊</b>
+    </footer>
+</body>
+</html>
