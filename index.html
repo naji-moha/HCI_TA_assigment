@@ -4,164 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>White Horse Hotel</title>
-    
-    <!-- Internal CSS for styling the page -->
+
     <style>
-        /* Base styling for the page */
+        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fafafa;
-            color: #4e342e;
+            background-color: #f5f5f5;
+            color: #5d4037;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Heading (H1) styles */
+        /* Heading Styles */
         h1 {
             text-align: center;
-            color: #d32f2f;
-            font-size: 3.5rem;
+            color: #e57373;
+            font-size: 3rem;
             margin-top: 30px;
             font-family: 'Georgia', serif;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        /* Subheadings styles (H2, H3, H4, H5) */
         h2, h3, h4, h5 {
-            color: #7b1fa2;
+            color: #8e24aa;
             margin-left: 30px;
             font-weight: 600;
         }
 
-        /* General paragraph styling */
         p {
             font-size: 1.1rem;
             padding: 0 20px;
             line-height: 1.8;
-            color: #616161;
+            color: #6d4c41;
             text-align: justify;
         }
 
-        /* Navigation Menu styles */
+        /* Navigation Menu */
         .menu {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            background-color: #c2185b;
+            background-color: #ec407a;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Menu items style */
         .menu li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
-        /* Links style in the navigation */
         .menu a {
             text-decoration: none;
             color: white;
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: block;
+            border-radius: 25px;
             font-weight: bold;
             font-size: 1rem;
-            border-radius: 25px;
             transition: background-color 0.3s ease;
         }
 
-        /* Hover effect for the navigation links */
         .menu a:hover {
-            background-color: #e91e63;
+            background-color: #f06292;
         }
 
-        /* Form radio and checkbox styles */
-        form input[type="radio"], form input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        /* Form label styling */
-        form label {
-            font-size: 1rem;
-            color: #4e342e;
-        }
-
-        /* Styling for images */
+        /* Image Styling */
         img {
-            margin: 20px;
+            margin: 15px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             max-width: 100%;
             height: auto;
+            transition: transform 0.3s ease;
         }
 
-        /* Ordered list styles */
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Ordered List Styling */
         ol {
             margin-left: 40px;
-            color: #d81b60;
+            color: #ba68c8;
         }
 
-        /* List item style inside ordered lists */
         ol li {
             margin-bottom: 10px;
             font-weight: bold;
         }
 
-        /* Links inside ordered lists */
         ol li a {
-            color: #7b1fa2;
+            color: #8e24aa;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        /* Hover effect for links inside ordered lists */
         ol li a:hover {
-            color: #ab47bc;
+            color: #ce93d8;
         }
 
-        /* Footer styles */
+        /* Footer Styles */
         footer {
-            background-color: #d81b60;
+            background-color: #ec407a;
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             font-size: 1rem;
             margin-top: 40px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
 
-        /* Footer bold text styling */
         footer b {
             font-size: 1.2rem;
         }
 
-        /* Animation effects for fading in elements */
-        h1, h2, h3, h4, p, ol li {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        /* Image hover effect (slight zoom on hover) */
-        img {
-            transition: transform 0.3s ease;
-        }
-
-        /* Image zooming effect when hovered */
-        img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Keyframes for the fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Button styling */
+        /* Button Styling */
         .button {
-            background-color: #7b1fa2;
+            background-color: #8e24aa;
             color: white;
-            padding: 10px 25px;
+            padding: 10px 20px;
             border: none;
             border-radius: 25px;
             font-size: 1rem;
@@ -170,53 +134,58 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Button hover effect */
         .button:hover {
-            background-color: #ab47bc;
+            background-color: #ba68c8;
         }
 
-        /* Wrapper for content to center it and provide padding */
+        /* Content Wrapper Styling */
         .content-wrapper {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
         }
 
-        /* Gallery image wrapper to arrange images nicely */
+        /* Image Gallery */
         .gallery-wrapper {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
-        /* Gallery image size */
         .gallery-wrapper img {
-            width: 300px;
+            width: 280px;
         }
 
-        /* Media queries for responsiveness */
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
 
+            /* Stack the menu items vertically on smaller screens */
             .menu {
                 flex-direction: column;
             }
 
+            /* Adjust image sizes on smaller devices */
             .gallery-wrapper img {
                 width: 100%;
             }
+        }
+
+        /* Keyframes for Heading Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Main heading and navigation menu -->
+    <!-- Hotel Heading and Menu -->
     <header>
         <h1>White Horse Hotel</h1>
-        <!-- Navigation menu -->
         <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -225,15 +194,14 @@
         </ul>
     </header>
 
-    <!-- Main content area wrapper -->
+    <!-- Main content area -->
     <div class="content-wrapper">
-        
-        <!-- About section for hotel description -->
-        <h2>About Our Hotel</h2>
-        <p><i>Begin your journey with us here at our main lounge. The main lounge with its elegance and décor has a warm welcoming style, providing a perfect backdrop for relaxation with family and friends.</i></p>
-        <p><i>Fusing contemporary luxury with inimitable elegance, White Horse Hotel & Apartments is a stunning hotel located on a hilltop in one of the city’s most vibrant neighborhoods. Combining upscale style with elegant city living, our stylish décor, excellent facilities, and fantastic service create a first-class experience and the perfect home away from home.</i></p>
 
-        <!-- Cuisine selection form -->
+        <!-- About Section -->
+        <h2>About Our Hotel</h2>
+        <p><i>Welcome to White Horse Hotel, where luxury meets elegance in the heart of the city. Nestled on a peaceful hilltop, our hotel offers a serene escape with breathtaking views and unmatched comfort.</i></p>
+
+        <!-- Cuisine Form -->
         <h5>Select Your Favorite Cuisine</h5>
         <form>
             <input type="radio" id="Italian" name="cuisine" value="italian">
@@ -245,11 +213,10 @@
             <input type="radio" id="American" name="cuisine" value="american">
             <label for="American">American</label><br><br>
 
-            <!-- Submit button for the form -->
             <input type="submit" value="Submit" class="button">
         </form>
 
-        <!-- Hotel gallery section -->
+        <!-- Gallery Section -->
         <h2>Gallery</h2>
         <div class="gallery-wrapper">
             <img src="horse.jpeg" alt="Hotel Logo">
@@ -257,12 +224,11 @@
             <img src="gym.jpg" alt="Hotel Gym">
         </div>
 
-        <!-- Links to other pages or social media -->
+        <!-- Links and Menu Categories -->
         <h3>More About Us</h3>
         <a href="https://hotelwhitehorse.com" class="button">Visit our website</a>
         <a href="https://www.instagram.com/whitehorsehotelhargeisa/" class="button">Follow us on Instagram</a>
 
-        <!-- Menu categories section -->
         <h4>Menu Categories</h4>
         <ol>
             <li><a href="#">Appetizers</a></li>
@@ -271,14 +237,13 @@
             <li><a href="#">Beverages</a></li>
             <li><a href="#">Specials</a></li>
         </ol>
+    </div>
 
-        <!-- Special features of the hotel -->
-        <h2>Special Features</h2>
-        <form>
-            <input type="checkbox" id="outdoor-seating" name="feature" value="Outdoor Seating">
-            <label for="outdoor-seating">Outdoor Seating</label><br>
+    <!-- Footer Section -->
+    <footer>
+        <b>Contact info: <br>Name: Eboney Celin<br>Phone: 252456829034<br>Email: najma44cl@gmail.com<br>Location: Hargeisa, Somaliland.</b>
+        <br><br><b>We hope to see you soon! 😊</b>
+    </footer>
 
-            <input type="checkbox" id="vegan-options" name="feature" value="Vegan Options">
-            <label for="vegan-options">Vegan Options</label><br>
-
-            <input type="checkbox" id
+</body>
+</html>
