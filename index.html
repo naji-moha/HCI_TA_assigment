@@ -4,36 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>White Horse Hotel</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
         /* Global Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe4e1;
             color: #5d4037;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: background-color 0.5s ease;
         }
 
         /* Heading Styles */
         h1 {
             text-align: center;
-            color: #e57373;
-            font-size: 3rem;
+            color: #ff69b4;
+            font-size: 3.5rem;
             margin-top: 30px;
-            font-family: 'Georgia', serif;
-            animation: fadeIn 2s ease-in-out;
+            font-family: 'Pacifico', cursive;
+            animation: bounceIn 2s ease-in-out;
         }
 
         h2, h3, h4, h5 {
-            color: #8e24aa;
-            margin-left: 30px;
-            font-weight: 600;
+            color: #ba68c8;
+            margin-left: 20px;
+            font-weight: bold;
+            font-family: 'Quicksand', sans-serif;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             padding: 0 20px;
             line-height: 1.8;
             color: #6d4c41;
@@ -47,27 +52,30 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            background-color: #ec407a;
+            background-color: #f8bbd0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
         }
 
         .menu li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         .menu a {
             text-decoration: none;
-            color: white;
-            padding: 12px 20px;
+            color: #fff;
+            padding: 12px 25px;
             display: block;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: bold;
             font-size: 1rem;
-            transition: background-color 0.3s ease;
+            background-color: #ff69b4;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .menu a:hover {
-            background-color: #f06292;
+            background-color: #ff8cbf;
+            transform: scale(1.05);
         }
 
         /* Image Styling */
@@ -81,168 +89,162 @@
         }
 
         img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Ordered List Styling */
-        ol {
-            margin-left: 40px;
-            color: #ba68c8;
-        }
-
-        ol li {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        ol li a {
-            color: #8e24aa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        ol li a:hover {
-            color: #ce93d8;
+            transform: scale(1.1);
         }
 
         /* Footer Styles */
         footer {
-            background-color: #ec407a;
+            background-color: #ffb6c1;
             color: white;
             text-align: center;
-            padding: 20px;
-            font-size: 1rem;
+            padding: 25px;
+            font-size: 1.2rem;
             margin-top: 40px;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         footer b {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
-        /* Button Styling */
-        .button {
-            background-color: #8e24aa;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #ba68c8;
+        .logo {
+            width: 100px;
+            margin-bottom: 10px;
         }
 
         /* Content Wrapper Styling */
         .content-wrapper {
-            max-width: 1000px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
-        /* Image Gallery */
-        .gallery-wrapper {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
+        /* Button Styling */
+        .button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .gallery-wrapper img {
-            width: 280px;
+        .button:hover {
+            background-color: #ff8cbf;
+            transform: scale(1.05);
         }
 
-        /* Media Queries for Responsiveness */
+        /* Keyframes for Animation */
+        @keyframes bounceIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            /* Stack the menu items vertically on smaller screens */
             .menu {
                 flex-direction: column;
+                border-radius: 30px;
             }
 
-            /* Adjust image sizes on smaller devices */
             .gallery-wrapper img {
                 width: 100%;
             }
-        }
-
-        /* Keyframes for Heading Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Hotel Heading and Menu -->
-    <header>
-        <h1>White Horse Hotel</h1>
-        <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ff69b4;">
+        <a class="navbar-brand text-white" href="#">White Horse Hotel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Main content area -->
+    <!-- Main Content -->
     <div class="content-wrapper">
+        <h1>Welcome to White Horse Hotel</h1>
+        <p><i>Your cozy getaway in the heart of the city, where comfort meets elegance and every stay feels like home.</i></p>
 
-        <!-- About Section -->
-        <h2>About Our Hotel</h2>
-        <p><i>Welcome to White Horse Hotel, where luxury meets elegance in the heart of the city. Nestled on a peaceful hilltop, our hotel offers a serene escape with breathtaking views and unmatched comfort.</i></p>
-
-        <!-- Cuisine Form -->
-        <h5>Select Your Favorite Cuisine</h5>
+        <!-- Cuisine Selection Form -->
+        <h2>Select Your Favorite Cuisine</h2>
         <form>
-            <input type="radio" id="Italian" name="cuisine" value="italian">
-            <label for="Italian">Italian</label><br>
-
-            <input type="radio" id="Chinese" name="cuisine" value="chinese">
-            <label for="Chinese">Chinese</label><br>
-
-            <input type="radio" id="American" name="cuisine" value="american">
-            <label for="American">American</label><br><br>
-
-            <input type="submit" value="Submit" class="button">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="Italian" name="cuisine" value="italian">
+                <label class="form-check-label" for="Italian">Italian</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="Chinese" name="cuisine" value="chinese">
+                <label class="form-check-label" for="Chinese">Chinese</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="American" name="cuisine" value="american">
+                <label class="form-check-label" for="American">American</label>
+            </div>
+            <button type="submit" class="button">Submit</button>
         </form>
 
         <!-- Gallery Section -->
         <h2>Gallery</h2>
-        <div class="gallery-wrapper">
-            <img src="horse.jpeg" alt="Hotel Logo">
-            <img src="bed.jpeg" alt="Hotel Bed">
-            <img src="gym.jpg" alt="Hotel Gym">
+        <div class="row gallery-wrapper">
+            <div class="col-md-4">
+                <img src="horse.jpeg" alt="Hotel Logo" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+                <img src="bed.jpeg" alt="Hotel Bed" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+                <img src="gym.jpg" alt="Hotel Gym" class="img-fluid">
+            </div>
         </div>
-
-        <!-- Links and Menu Categories -->
-        <h3>More About Us</h3>
-        <a href="https://hotelwhitehorse.com" class="button">Visit our website</a>
-        <a href="https://www.instagram.com/whitehorsehotelhargeisa/" class="button">Follow us on Instagram</a>
-
-        <h4>Menu Categories</h4>
-        <ol>
-            <li><a href="#">Appetizers</a></li>
-            <li><a href="#">Main Courses</a></li>
-            <li><a href="#">Desserts</a></li>
-            <li><a href="#">Beverages</a></li>
-            <li><a href="#">Specials</a></li>
-        </ol>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        <b>Contact info: <br>Name: Eboney Celin<br>Phone: 252456829034<br>Email: najma44cl@gmail.com<br>Location: Hargeisa, Somaliland.</b>
-        <br><br><b>We hope to see you soon! 😊</b>
+        <img src="logo.png" alt="Hotel Logo" class="logo">
+        <h5>Stay Connected</h5>
+        <p>Follow us on social media for updates!</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 White Horse Hotel. All Rights Reserved.</p>
+        <p>Designed with <span style="color: #ff4081;">❤</span> For You!</p>
     </footer>
 
 </body>
