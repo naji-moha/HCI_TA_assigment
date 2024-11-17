@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        /* Global Styles */
+        /* Original Styles Preserved */
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             background-color: #ffe4e1;
@@ -17,6 +17,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: background-color 0.5s ease;
         }
 
         h1 {
@@ -24,17 +25,17 @@
             color: #ff69b4;
             font-size: 3.5rem;
             margin-top: 30px;
+            font-family: 'Pacifico', cursive;
+            animation: bounceIn 2s ease-in-out;
         }
 
-        section {
-            padding: 80px 20px;
-        }
-
-        /* Sticky Navigation */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        footer {
+            background-color: #ffb6c1;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.2rem;
+            margin-top: 40px;
         }
 
         .faq-item {
@@ -51,15 +52,6 @@
             display: none;
             padding-left: 20px;
             color: #6d4c41;
-        }
-
-        footer {
-            background-color: #ffb6c1;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 1.2rem;
-            margin-top: 40px;
         }
     </style>
 </head>
@@ -105,7 +97,17 @@
 
     <section id="gallery">
         <h2>Gallery</h2>
-        <p>Discover our beautiful spaces.</p>
+        <div class="row gallery-wrapper">
+            <div class="col-md-4">
+                <img src="horse.jpeg" alt="Hotel Logo" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+                <img src="bed.jpeg" alt="Hotel Bed" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+                <img src="gym.jpg" alt="Hotel Gym" class="img-fluid">
+            </div>
+        </div>
     </section>
 
     <section id="faq">
@@ -134,8 +136,9 @@
         <p>&copy; 2024 White Horse Hotel. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Smooth Scrolling -->
+    <!-- JavaScript for Features -->
     <script>
+        // Smooth Scrolling
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -155,6 +158,16 @@
                 const isVisible = answer.style.display === 'block';
                 answer.style.display = isVisible ? 'none' : 'block';
             });
+        });
+
+        // Sticky Navigation
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 0) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
         });
     </script>
 </body>
