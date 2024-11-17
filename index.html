@@ -17,82 +17,42 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: background-color 0.5s ease;
         }
 
-        /* Heading Styles */
         h1 {
             text-align: center;
             color: #ff69b4;
             font-size: 3.5rem;
             margin-top: 30px;
-            font-family: 'Pacifico', cursive;
-            animation: bounceIn 2s ease-in-out;
         }
 
-        h2, h3, h4, h5 {
-            color: #ba68c8;
-            margin-left: 20px;
+        section {
+            padding: 80px 20px;
+        }
+
+        /* Sticky Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            cursor: pointer;
             font-weight: bold;
-            font-family: 'Quicksand', sans-serif;
+            color: #ff69b4;
         }
 
-        p {
-            font-size: 1.2rem;
-            padding: 0 20px;
-            line-height: 1.8;
+        .faq-answer {
+            display: none;
+            padding-left: 20px;
             color: #6d4c41;
-            text-align: justify;
         }
 
-        /* Navigation Menu */
-        .menu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #f8bbd0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 50px;
-        }
-
-        .menu li {
-            margin: 0 10px;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #fff;
-            padding: 12px 25px;
-            display: block;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1rem;
-            background-color: #ff69b4;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .menu a:hover {
-            background-color: #ff8cbf;
-            transform: scale(1.05);
-        }
-
-        /* Image Styling */
-        img {
-            margin: 15px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer Styles */
         footer {
             background-color: #ffb6c1;
             color: white;
@@ -100,71 +60,6 @@
             padding: 25px;
             font-size: 1.2rem;
             margin-top: 40px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer b {
-            font-size: 1.4rem;
-        }
-
-        .logo {
-            width: 100px;
-            margin-bottom: 10px;
-        }
-
-        /* Content Wrapper Styling */
-        .content-wrapper {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* Button Styling */
-        .button {
-            background-color: #ff69b4;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #ff8cbf;
-            transform: scale(1.05);
-        }
-
-        /* Keyframes for Animation */
-        @keyframes bounceIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.8rem;
-            }
-
-            .menu {
-                flex-direction: column;
-                border-radius: 30px;
-            }
-
-            .gallery-wrapper img {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -179,73 +74,88 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Home</a>
+                    <a class="nav-link text-white" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About</a>
+                    <a class="nav-link text-white" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Gallery</a>
+                    <a class="nav-link text-white" href="#gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact</a>
+                    <a class="nav-link text-white" href="#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#contact">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="content-wrapper">
+    <!-- Sections -->
+    <section id="home">
         <h1>Welcome to White Horse Hotel</h1>
-        <p><i>Your cozy getaway in the heart of the city, where comfort meets elegance and every stay feels like home.</i></p>
+        <p>Your cozy getaway in the heart of the city.</p>
+    </section>
 
-        <!-- Cuisine Selection Form -->
-        <h2>Select Your Favorite Cuisine</h2>
-        <form>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="Italian" name="cuisine" value="italian">
-                <label class="form-check-label" for="Italian">Italian</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="Chinese" name="cuisine" value="chinese">
-                <label class="form-check-label" for="Chinese">Chinese</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" id="American" name="cuisine" value="american">
-                <label class="form-check-label" for="American">American</label>
-            </div>
-            <button type="submit" class="button">Submit</button>
-        </form>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Experience unmatched luxury and comfort.</p>
+    </section>
 
-        <!-- Gallery Section -->
+    <section id="gallery">
         <h2>Gallery</h2>
-        <div class="row gallery-wrapper">
-            <div class="col-md-4">
-                <img src="horse.jpeg" alt="Hotel Logo" class="img-fluid">
-            </div>
-            <div class="col-md-4">
-                <img src="bed.jpeg" alt="Hotel Bed" class="img-fluid">
-            </div>
-            <div class="col-md-4">
-                <img src="gym.jpg" alt="Hotel Gym" class="img-fluid">
-            </div>
-        </div>
-    </div>
+        <p>Discover our beautiful spaces.</p>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <img src="logo.png" alt="Hotel Logo" class="logo">
-        <h5>Stay Connected</h5>
-        <p>Follow us on social media for updates!</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">What amenities does the hotel offer?</div>
+            <div class="faq-answer">We offer free Wi-Fi, a swimming pool, gym access, and 24-hour room service.</div>
         </div>
+        <div class="faq-item">
+            <div class="faq-question">What are the check-in and check-out times?</div>
+            <div class="faq-answer">Check-in is at 3:00 PM, and check-out is at 12:00 PM.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is parking available?</div>
+            <div class="faq-answer">Yes, we provide complimentary parking for all guests.</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch for reservations and inquiries.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
         <p>&copy; 2024 White Horse Hotel. All Rights Reserved.</p>
-        <p>Designed with <span style="color: #ff4081;">❤</span> For You!</p>
     </footer>
 
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Collapsible FAQ Section
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                answer.style.display = isVisible ? 'none' : 'block';
+            });
+        });
+    </script>
 </body>
 </html>
